@@ -1,0 +1,24 @@
+<mat-spinner *ngIf="isLoading" class="spinner"></mat-spinner>
+<div class="card" *ngIf="!isLoading">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{item.name}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="item.imgLink" [alt]="item.name">
+    <mat-card-content>
+      <h4>Ingredients:</h4>
+      <div *ngFor="let ingredient of item.ingredients">
+        <ol>
+          <li>{{ingredient.name}}</li>
+          <ul>
+            <li>{{ingredient.type}}</li>
+          </ul>
+        </ol>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button routerLink="/">Back To Menu</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
